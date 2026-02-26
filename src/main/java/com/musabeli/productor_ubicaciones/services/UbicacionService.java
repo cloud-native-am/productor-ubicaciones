@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Service
@@ -21,15 +22,15 @@ public class UbicacionService {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Scheduled(fixedRate = 300000)
+    @Scheduled(fixedRate = 40000)
     public void publicarUbicacionAutomatica() {
         try {
             String patente = PATENTES[(int) (Math.random() * PATENTES.length)];
 
             UbicacionVehiculoDto dto = UbicacionVehiculoDto.builder()
                     .patente(patente)
-                    .latitud(-33.45 + (Math.random() * 0.1))
-                    .longitud(-70.65 + (Math.random() * 0.1))
+                    .latitud(BigDecimal.valueOf(-33.45 + (Math.random() * 0.1)))
+                    .longitud(BigDecimal.valueOf(-70.65 + (Math.random() * 0.1)))
                     .fechaActualizacion(LocalDateTime.now())
                     .build();
 

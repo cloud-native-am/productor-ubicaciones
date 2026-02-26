@@ -1,5 +1,6 @@
 package com.musabeli.productor_ubicaciones.dtos;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UbicacionVehiculoDto {
     private String patente;
-    private Double latitud;
-    private Double longitud;
+    private BigDecimal latitud;
+    private BigDecimal longitud;
     private LocalDateTime fechaActualizacion;
 }
