@@ -22,7 +22,7 @@ public class UbicacionService {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Scheduled(fixedRate = 40000)
+    @Scheduled(fixedRate = 60000)
     public void publicarUbicacionAutomatica() {
         try {
             String patente = PATENTES[(int) (Math.random() * PATENTES.length)];
